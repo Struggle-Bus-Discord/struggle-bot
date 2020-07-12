@@ -1,0 +1,27 @@
+{
+  "name": "struggle-bot",
+  "version": "1.0.0",
+  "description": "Bot Used for the Struggle Bus Discord Server",
+  "main": "src/bot.js",
+  "type": "module",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0",
+    "lodash": "^4.17.19"
+  },
+  "devDependencies": {
+    "eslint": "^7.4.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "start": "nodemon src/bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gregory Shayko",
+  "license": "ISC"
+}
