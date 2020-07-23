@@ -1,6 +1,8 @@
 # struggle-bot
 Discord bot used for struggle bus server
 
+**NOTE:** Any pushes to this repo will automatically trigger the Jenkins build and restart the server.
+
 ## Local Development
 Suggested Tools:
 - Visual Studio Cod
