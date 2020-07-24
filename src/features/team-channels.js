@@ -27,8 +27,8 @@ export default {
         let voiceChannel = gameVoiceCategory.children.find(channel => channel.name == channelNames[0])
 
         if(!voiceChannel){
-            log.debug("Creating game channel: " + game.name)
-            await guild.channels.create(game.name, {
+            log.debug("Creating game channel: " + channelNames[0])
+            await guild.channels.create(channelNames[0], {
                 type: 'voice',
                 bitrate: 128000,
                 parent: gameVoiceCategory,
