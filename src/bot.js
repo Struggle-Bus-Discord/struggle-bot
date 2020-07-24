@@ -10,12 +10,12 @@ let log = new Logger({client:client})
 
 // when the client is ready, run this code
 // this event will only trigger one time after logging in
-client.on('ready', async () => {
+client.on('ready', () => {
 
     log.info("Connected as " + client.user.tag)
     client.user.setActivity("with My Balls")
     log.debug("I am connected to the following guilds:")
-    client.guilds.cache.forEach((guild) => {
+    client.guilds.cache.forEach(async (guild) => {
         log.debug(`  - ${guild.name}`)
         await GameChannels.iniatalize(guild)
         await TeamChannels.iniatalize(guild)
