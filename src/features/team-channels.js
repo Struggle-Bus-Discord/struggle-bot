@@ -41,14 +41,17 @@ export default {
     userEnteredChannel : (member) => {
         let channel = member.channel
 
-        log.debug(member.channel)
-        
         if(channels.includes(channel.name)){
 
             // Check if the next name exists
             let currentChannelIndex = channels.indexOf(channel.name)
             
             log.debug(channel.name + " INDEX: " + currentChannelIndex)
+            if (member.guild.channels.exists('name', channels[currentChannelIndex + 1])) { 
+                log.debug("CHANNEL " + channels[currentChannelIndex + 1] + " ALREADY EXISTS")
+            }else{
+                log.debug("CHANNEL " + channels[currentChannelIndex + 1] + " DOES NOT EXISTS")
+            }
         }
     }
 }
