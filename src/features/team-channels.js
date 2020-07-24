@@ -29,9 +29,12 @@ export default {
             if(channel.members.size == 0){
                 
                 let allChannels = channel.guild.channels.cache
+                log.debug(allChannels.size)
                 for (var i = allChannels.size - 1; i >= 0; i--) {
                     let currentChannel = allChannels[i]
                     let previousChannel = allChannels[i-1]
+
+                    log.debug(currentChannel)
 
                     log.debug("current: " + currentChannel.name + ":" + currentChannel.members.size)
                     log.debug("previous: " + previousChannel.name + ":" + previousChannel.members.size)
