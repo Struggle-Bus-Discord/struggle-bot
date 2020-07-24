@@ -32,7 +32,8 @@ export default {
                 log.debug(allChannels.length)
                 for (var i = allChannels.size - 1; i >= 0; i--) {
                     
-                    let currentChannel = allChannels[i]                    
+                    let currentChannel = allChannels[i]
+                    log.debug(currentChannel)
                     let previousChannel = allChannels[i-1]
                     log.debug("Checking item " + i + " " + currentChannel + " " + previousChannel)
 
