@@ -57,7 +57,7 @@ export default {
 
             let commonProperties = {
                 bitrate: 128000,
-                position: positionOffset + i,
+                position: positionOffset + 1 + i,
                 permissionOverwrites: [
                     {
                         id: guild.roles.everyone,
