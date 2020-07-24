@@ -33,6 +33,10 @@ export default {
                 bitrate: 128000,
                 parent: gameVoiceCategory,
             })
+        }else{
+            voiceChannel.edit({
+                position: voiceChannel.size + 1
+            })
         }
     },
 
