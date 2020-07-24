@@ -1,7 +1,7 @@
 import _ from 'lodash'
 import log from '../utils/logger.js'
 
-const positionStart = 1
+const startAfterChannel = 'General'
 const games = [
     {
         name: 'Call of Duty Modern Warfare',
@@ -48,6 +48,7 @@ export default {
     iniatalize : async (guild) => {
         let gameVoiceCategory = guild.channels.cache.find(channel => channel.name.includes('Game Voice Channels'))
         let gameVoiceChannels = gameVoiceCategory.children
+        let positionOffset = gameVoiceChannels.find(channel => channel.name == startAfterChannel).position
 
         for (let i = 0; i < games.length; i++) {
             let game = games[i]
@@ -56,7 +57,7 @@ export default {
 
             let commonProperties = {
                 bitrate: 128000,
-                position: positionStart + i,
+                position: positionOffset + i,
                 permissionOverwrites: [
                     {
                         id: guild.roles.everyone,
