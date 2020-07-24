@@ -48,14 +48,26 @@ _.forEach(games, (game) => {
 export default {
 
     iniatalize : (guild) => {
-        let gameVoiceChannels = guild.channels.cache.find(channel => channel.name.includes('🔉 Game Voice Channels')).children
+        let gameVoiceCategory = guild.channels.cache.find(channel => channel.name.includes('🔉 Game Voice Channels'))
+        let gameVoiceChannels = gameVoiceCategory.children
 
         games.forEach(game => {
 
             let voiceChannel = gameVoiceChannels.find(channel => channel.name == game.name)
-            if(!voiceChannel){
+            if(!voiceChannel && game.name == 'Minecraft'){
                 log.debug("Creating game channel: " + game.name)
+                guild.channels.create(game.name{
+                    parent: gameVoiceCategory,
+                    permissionOverwrites: [
+                        {
+                            id: channel.guild.roles.everyone,
+                            deny: ['VIEW_CHANNEL']
+                        }
+                    ]
+                })
             }
+
+            //Update the permission
             
         });
     },
