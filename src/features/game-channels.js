@@ -48,9 +48,16 @@ _.forEach(games, (game) => {
 export default {
 
     iniatalize : (guild) => {
-        // TODO MAKE SURE WE ARE STUGGLE BUS
-        log.debug(guild.channels.cache.find(channel => channel.name = 'Game Voice Channels'))
+        let gameVoiceChannels = guild.channels.cache.find(channel => channel.name = 'Game Voice Channels').children
 
+        games.forEach(game => {
+
+            let voiceChannel = gameVoiceChannels.find(channel => channel.name == game.name)
+            if(!voiceChannel){
+                log.debug("Creating game channel: " + game)
+            }
+            
+        });
     },
 
     userLeftChannel : (channel) => {
