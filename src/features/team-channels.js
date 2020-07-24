@@ -1,4 +1,4 @@
-import _ from 'lodash'
+import _, { lastIndexOf } from 'lodash'
 import log from '../utils/logger.js'
 
 let channelNames = [
@@ -28,10 +28,12 @@ export default {
 
             if(channel.members.size == 0){
                 
-                let allChannels = channel.parent.children.cache
+                let allChannels = channel.parent.children.array()
                 for (var i = allChannels.size - 1; i >= 0; i--) {
+
                     
                     let currentChannel = allChannels[i]
+                    
                     let previousChannel = allChannels[i-1]
                     log.debug("Checking item " + i + " " + currentChannel + " " + previousChannel)
 
