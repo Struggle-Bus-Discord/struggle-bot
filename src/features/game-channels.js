@@ -49,8 +49,8 @@ export default {
         let gameVoiceCategory = guild.channels.cache.find(channel => channel.name.includes('🔉 Game Voice Channels'))
         let gameVoiceChannels = gameVoiceCategory.children
 
-        games.forEach(async game => {
-
+        for (let i = 0; i < games.length; i++) {
+            let game = games[i]
             let voiceChannel = gameVoiceChannels.find(channel => channel.name == game.name)
             let gameRole = guild.roles.cache.find(role => role.name == game.role)
 
@@ -78,7 +78,7 @@ export default {
             }else{
                 await voiceChannel.edit(commonProperties)
             }
-        });
+        };
     },
 
     userLeftChannel : (channel) => {
