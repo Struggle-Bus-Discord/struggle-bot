@@ -54,8 +54,6 @@ export default {
                     
                     let currentChannelName = channelNames[i]
                     let previousChannelName = channelNames[i-1]
-                    log.debug("Checking item " + i + " " + currentChannelName + " " + previousChannelName)
-
                     if(currentChannelName && previousChannelName){
 
                         let currentChannel = channel.parent.children.find(channel => channel.name == currentChannelName)
