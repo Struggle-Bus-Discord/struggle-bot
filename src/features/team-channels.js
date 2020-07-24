@@ -63,10 +63,12 @@ export default {
                         // If the current channel doesnt exist, try the next
                         if(!currentChannel)continue;
 
+                        log.debug('current channel found! ' + currentChannel.name)
+
                         let previousChannel = channel.parent.children.find(channel => channel.name == previousChannelName)
 
-                        //log.debug("current: " + currentChannel.name + ":" + currentChannel.members.size)
-                        //log.debug("previous: " + previousChannel.name + ":" + previousChannel.members.size)
+                        log.debug("current: " + currentChannel.name + ":" + currentChannel.members.size)
+                        log.debug("previous: " + previousChannel.name + ":" + previousChannel.members.size)
 
                         if(currentChannel.members.size == 0 && previousChannel.members.size == 0){
                             log.info("Deleting channel " + currentChannel.name)
