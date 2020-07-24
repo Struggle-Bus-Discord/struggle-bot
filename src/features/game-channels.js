@@ -56,7 +56,7 @@ export default {
             let voiceChannel = gameVoiceChannels.find(channel => channel.name == game.name)
             if(!voiceChannel && game.name == 'Minecraft'){
                 log.debug("Creating game channel: " + game.name)
-                guild.channels.create(game.name{
+                guild.channels.create(game.name, {
                     parent: gameVoiceCategory,
                     permissionOverwrites: [
                         {
@@ -66,8 +66,6 @@ export default {
                     ]
                 })
             }
-
-            //Update the permission
             
         });
     },
