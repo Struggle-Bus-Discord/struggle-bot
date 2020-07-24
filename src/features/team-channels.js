@@ -36,7 +36,7 @@ export default {
         }else{
             await voiceChannel.edit({
                 bitrate: 128000,
-                position: voiceChannel.size + 1
+                position: gameVoiceCategory.children.size + 1
             })
         }
     },
