@@ -59,6 +59,7 @@ export default {
                 log.debug("Creating game channel: " + game.name + ' with role permissions ' + gameRole.name)
                 guild.channels.create(game.name, {
                     type: 'voice',
+                    bitrate: 128000,
                     parent: gameVoiceCategory,
                     permissionOverwrites: [
                         {
