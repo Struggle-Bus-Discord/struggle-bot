@@ -33,10 +33,15 @@ export default {
                     let currentChannel = allChannels[i]
                     let previousChannel = allChannels[i-1]
 
+                    log.debug("current: " + currentChannel.name + ":" + currentChannel.members.size)
+                    log.debug("previous: " + previousChannel.name + ":" + previousChannel.members.size)
+
                     if(previousChannel){
                         if(currentChannel.members.size == 0 && previousChannel.members.size == 0){
                             log.info("Deleting channel " + channel.name)
                             currentChannel.delete()
+                        }else{
+                            break;
                         }
                     }
                 }
