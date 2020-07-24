@@ -1,4 +1,4 @@
-import _, { lastIndexOf } from 'lodash'
+import _ from 'lodash'
 import log from '../utils/logger.js'
 
 let channelNames = [
