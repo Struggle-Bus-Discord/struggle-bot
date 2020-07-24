@@ -36,7 +36,7 @@ export default {
         }else{
             await voiceChannel.edit({
                 bitrate: 128000,
-                position: 5
+                position: 999
             })
         }
     },
