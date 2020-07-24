@@ -49,9 +49,6 @@ export default {
         let gameVoiceCategory = guild.channels.cache.find(channel => channel.name.includes('Game Voice Channels'))
         let gameVoiceChannels = gameVoiceCategory.children
 
-        let initialPosition = gameVoiceChannels.find(channel => channel.name == 'General').position + 1
-        log.debug(initialPosition)
-
         for (let i = 0; i < games.length; i++) {
             let game = games[i]
             let voiceChannel = gameVoiceChannels.find(channel => channel.name == game.name)
@@ -59,7 +56,7 @@ export default {
 
             let commonProperties = {
                 bitrate: 128000,
-                position: initialPosition + i,
+                position: positionStart + i,
                 permissionOverwrites: [
                     {
                         id: guild.roles.everyone,
