@@ -36,7 +36,7 @@ export default {
         }
     },
 
-    userEnteredChannel : (cahnnel, guild) => {
+    userEnteredChannel : (channel, guild) => {
 
         if(channels.includes(channel.name)){
 
