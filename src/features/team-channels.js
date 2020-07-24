@@ -72,7 +72,7 @@ export default {
 
                         if(currentChannel.members.size == 0 && previousChannel.members.size == 0){
                             log.info("Deleting channel " + currentChannel.name)
-                            //currentChannel.delete()
+                            currentChannel.delete()
                         }else{
                             break;
                         }
