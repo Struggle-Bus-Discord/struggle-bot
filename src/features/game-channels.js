@@ -43,10 +43,8 @@ _.forEach(games, (game) => {
     }
 })
 
-//log.info("Game configs found:")
-//log.info(games)
-
 export default {
+    
 
     iniatalize : (guild) => {
         let gameVoiceCategory = guild.channels.cache.find(channel => channel.name.includes('🔉 Game Voice Channels'))
@@ -56,26 +54,30 @@ export default {
 
             let voiceChannel = gameVoiceChannels.find(channel => channel.name == game.name)
             let gameRole = guild.roles.cache.find(role => role.name == game.role)
-            if(!voiceChannel && game.name == 'Minecraft'){
-                log.debug("Creating game channel: " + game.name + ' with role permissions ' + gameRole.name)
-                voiceChannel = guild.channels.create(game.name, {
-                    type: 'voice',
-                    bitrate: 128000,
-                    parent: gameVoiceCategory,
-                    permissionOverwrites: [
-                        {
-                            id: guild.roles.everyone,
-                            deny: ['VIEW_CHANNEL']
-                        },
-                        {
-                            id: gameRole,
-                            allow: ['VIEW_CHANNEL']
-                        }
-                    ]
-                })
+
+            let commonProperties = {
+                bitrate: 128000,
+                permissionOverwrites: [
+                    {
+                        id: guild.roles.everyone,
+                        deny: ['VIEW_CHANNEL']
+                    },
+                    {
+                        id: gameRole,
+                        allow: ['VIEW_CHANNEL']
+                    }
+                ]
             }
 
-            log.debug(voiceChannel);
+            if(!voiceChannel && game.name == 'Minecraft'){
+                log.debug("Creating game channel: " + game.name + ' with role permissions ' + gameRole.name)
+                guild.channels.create(game.name, _.merge({
+                    type: 'voice',
+                    parent: gameVoiceCategory,
+                }, commonProperties))
+            }else{
+                voiceChannel.edit(commonProperties)
+            }
         });
     },
 
