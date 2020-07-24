@@ -41,6 +41,7 @@ export default {
     userEnteredChannel : (member) => {
         let channel = member.channel
 
+        log.debug(member.channel)
         
         if(channels.includes(channel.name)){
 
