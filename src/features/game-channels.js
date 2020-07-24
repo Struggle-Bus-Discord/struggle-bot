@@ -71,7 +71,11 @@ export default {
             }
 
             if(!voiceChannel && game.name == 'Minecraft'){
-                log.debug("Creating game channel: " + game.name + ' with role permissions ' + gameRole.name)
+                log.debug("Creating game channel: " + game.name + ' tied to role ' + gameRole.name)
+                log.debug(_.merge({
+                    type: 'voice',
+                    parent: gameVoiceCategory,
+                }, commonProperties))
                 guild.channels.create(game.name, _.merge({
                     type: 'voice',
                     parent: gameVoiceCategory,
