@@ -28,7 +28,7 @@ export default {
 
             if(channel.members.size == 0){
                 
-                let allChannels = channel.guild.channels.cache.filter(channel => channel.type =='voice');
+                let allChannels = channel.guild.channels.cache.filter(channel => channel.parentID == channel.parentID);
                 log.debug(allChannels.size)
                 for (var i = allChannels.size - 1; i >= 0; i--) {
 
