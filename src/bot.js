@@ -47,8 +47,8 @@ client.on("voiceStateUpdate", function(oldMember, newMember){
     // If no users are left, we remove the public permissions
     if(oldMember && oldMember.channel){
         log.debug(`${oldMember.member.displayName} Left ${oldMember.channel.name}`)
-        GameChannels.userLeftChannel(oldMember)
-        TeamChannels.userLeftChannel(oldMember)
+        GameChannels.userLeftChannel(oldMember.channel)
+        TeamChannels.userLeftChannel(oldMember.channel)
     }
 
     // The new channel, we add the public permissions
