@@ -28,7 +28,7 @@ export default {
 
             if(channel.members.size == 0){
                 
-                let allChannels = channel.parent.children
+                let allChannels = channel.parent.children.cache
                 for (var i = allChannels.size - 1; i >= 0; i--) {
                     
                     let currentChannel = allChannels[i]
