@@ -17,9 +17,9 @@ client.on('ready', () => {
     log.debug("I am connected to the following guilds:")
     client.guilds.cache.forEach((guild) => {
         log.debug(`  - ${guild.name}`)
+        GameChannels.iniatalize(guild)
     });
 
-    GameChannels.iniatalize(client.guilds.cache.first)
 })
 
 client.on('message', message => {
