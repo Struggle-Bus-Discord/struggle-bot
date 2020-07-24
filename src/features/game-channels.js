@@ -60,7 +60,7 @@ export default {
                     parent: gameVoiceCategory,
                     permissionOverwrites: [
                         {
-                            id: channel.guild.roles.everyone,
+                            id: guild.roles.everyone,
                             deny: ['VIEW_CHANNEL']
                         }
                     ]
