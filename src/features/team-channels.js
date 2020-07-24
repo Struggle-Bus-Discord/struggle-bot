@@ -59,6 +59,10 @@ export default {
                     if(currentChannelName && previousChannelName){
 
                         let currentChannel = channel.parent.children.find(channel => channel.name == currentChannelName)
+
+                        // If the current channel doesnt exist, try the next
+                        if(!currentChannel)break;
+                        
                         let previousChannel = channel.parent.children.find(channel => channel.name == previousChannelName)
 
                         //log.debug("current: " + currentChannel.name + ":" + currentChannel.members.size)
