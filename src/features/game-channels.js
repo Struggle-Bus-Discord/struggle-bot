@@ -77,7 +77,7 @@ export default {
                     parent: gameVoiceCategory,
                 }, commonProperties))
             }else{
-                voiceChannel.edit(commonProperties)
+                //voiceChannel.edit(commonProperties)
             }
         });
     },
