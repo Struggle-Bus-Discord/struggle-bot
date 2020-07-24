@@ -87,7 +87,8 @@ export default {
                 if (!nextChannel){
                     log.debug("Creating new voice channel: " + nextChannelName)
                     channel.clone({
-                        name: nextChannelName
+                        name: nextChannelName,
+                        position: channel.position + 1
                     })
                 }
             }
