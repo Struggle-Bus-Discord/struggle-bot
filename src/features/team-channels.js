@@ -22,6 +22,20 @@ let channelNames = [
 
 export default {
 
+    iniatalize : async (guild) => {
+        let gameVoiceCategory = guild.channels.cache.find(channel => channel.name.includes('Game Voice Channels'))
+        let voiceChannel = gameVoiceCategory.children.find(channel => channel.name == channelNames[0])
+
+        if(!voiceChannel){
+            log.debug("Creating game channel: " + game.name)
+            await guild.channels.create(game.name, {
+                type: 'voice',
+                bitrate: 128000,
+                parent: gameVoiceCategory,
+            })
+        }
+    },
+
     userLeftChannel : (channel) => {
 
         if(channelNames.includes(channel.name)){

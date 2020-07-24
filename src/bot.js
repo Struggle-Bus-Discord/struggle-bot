@@ -18,6 +18,7 @@ client.on('ready', () => {
     client.guilds.cache.forEach((guild) => {
         log.debug(`  - ${guild.name}`)
         GameChannels.iniatalize(guild)
+        TeamChannels.iniatalize(guild)
     });
 
 })
