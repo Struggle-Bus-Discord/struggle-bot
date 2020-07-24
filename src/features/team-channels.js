@@ -29,6 +29,7 @@ export default {
             if(channel.members.size == 0){
                 
                 let allChannels = channel.parent.children
+                log.debug(channel.parent.name)
                 log.debug(allChannels.size)
                 for (var i = allChannels.size - 1; i >= 0; i--) {
 
