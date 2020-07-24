@@ -44,12 +44,11 @@ export default {
             let currentChannelIndex = channels.indexOf(channel.name)
             
             log.debug(channel.name + " INDEX: " + currentChannelIndex)
-            log.debug(guild.channels.cache)
-            // if (guild.channels.cache.find(channel => channel.name == channels[currentChannelIndex + 1])) { 
-            //     log.debug("CHANNEL " + channels[currentChannelIndex + 1] + " ALREADY EXISTS")
-            // }else{
-            //     log.debug("CHANNEL " + channels[currentChannelIndex + 1] + " DOES NOT EXISTS")
-            // }
+            if (guild.channels.cache.find(channel => channel.name == channels[currentChannelIndex + 1])) { 
+                log.debug("CHANNEL " + channels[currentChannelIndex + 1] + " ALREADY EXISTS")
+            }else{
+                log.debug("CHANNEL " + channels[currentChannelIndex + 1] + " DOES NOT EXISTS")
+            }
         }
     }
 }
