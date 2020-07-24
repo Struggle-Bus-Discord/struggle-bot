@@ -2,22 +2,22 @@ import _ from 'lodash'
 import log from '../utils/logger.js'
 
 let channelNames = [
-    'Alpha Team',
-    'Bravo Team',
-    'Charlie Team',
-    'Delta Team',
-    'Echo Team',
-    'Foxtrot Team',
-    'Golf Team',
-    'Hotel Team',
-    'India Team',
-    'Juliet Team',
-    'Kilo Team',
-    'Lima Team',
-    'Mike Team',
-    'November Team',
-    'Oscar Team',
-    'Papa Team'
+    'Alpha Squad',
+    'Bravo Squad',
+    'Charlie Squad',
+    'Delta Squad',
+    'Echo Squad',
+    'Foxtrot Squad',
+    'Golf Squad',
+    'Hotel Squad',
+    'India Squad',
+    'Juliet Squad',
+    'Kilo Squad',
+    'Lima Squad',
+    'Mike Squad',
+    'November Squad',
+    'Oscar Squad',
+    'Papa Squad'
 ]
 
 export default {
