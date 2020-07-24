@@ -1,7 +1,7 @@
 import _ from 'lodash'
 import log from '../utils/logger.js'
 
-const positionStart = 2
+const positionStart = 1
 const games = [
     {
         name: 'Call of Duty Modern Warfare',
