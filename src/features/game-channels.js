@@ -47,6 +47,13 @@ _.forEach(games, (game) => {
 
 export default {
 
+    iniatalize : (client) => {
+        // TODO MAKE SURE WE ARE STUGGLE BUS
+        let server = client.guilds.cache[0]
+        log.debug(server.channels.cache.find(channel => channel.name = 'Game Voice Channels'))
+
+    },
+
     userLeftChannel : (channel) => {
         if(channel.parent.name.includes("Game Voice Channels")){
             if(channel.members.size == 0){
