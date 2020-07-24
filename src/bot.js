@@ -10,7 +10,7 @@ let log = new Logger({client:client})
 
 // when the client is ready, run this code
 // this event will only trigger one time after logging in
-client.on('ready', () => {
+client.on('ready', async () => {
 
     log.info("Connected as " + client.user.tag)
     client.user.setActivity("with My Balls")
