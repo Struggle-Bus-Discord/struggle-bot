@@ -45,7 +45,7 @@ export default {
                             log.info("Deleting channel " + channel.name)
                             currentChannel.delete()
                         }else{
-                            break;
+                            //break;
                         }
                     }
                 }
