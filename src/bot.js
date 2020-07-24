@@ -54,8 +54,8 @@ client.on("voiceStateUpdate", function(oldMember, newMember){
     // The new channel, we add the public permissions
     if(newMember && newMember.channel){
         log.debug(`${newMember.member.displayName} Joined ${newMember.channel.name}`)        
-        GameChannels.userEnteredChannel(newMember)
-        TeamChannels.userEnteredChannel(newMember)
+        GameChannels.userEnteredChannel(newMember.channel)
+        TeamChannels.userEnteredChannel(newMember.channel, newMember.guild)
     }
 
 });

@@ -22,14 +22,12 @@ let channels = [
 
 export default {
 
-    userLeftChannel : (member) => {
-        let channel = member.channel
+    userLeftChannel : (channel) => {
 
         if(channels.includes(channel.name)){
 
             if(channel.members.size == 0){
                 log.debug(`  - Nobody is left in ${channel.name}`)
-
                 if(channel.name != channels[0]){
                     log.info("Deleting channel " + channel.name)
                     channel.delete();
@@ -38,8 +36,7 @@ export default {
         }
     },
 
-    userEnteredChannel : (member) => {
-        let channel = member.channel
+    userEnteredChannel : (cahnnel, guild) => {
 
         if(channels.includes(channel.name)){
 
@@ -47,7 +44,7 @@ export default {
             let currentChannelIndex = channels.indexOf(channel.name)
             
             log.debug(channel.name + " INDEX: " + currentChannelIndex)
-            if (member.guild.channels.exists('name', channels[currentChannelIndex + 1])) { 
+            if (guild.channels.cache.find(channel => channel.name == channels[currentChannelIndex + 1])) { 
                 log.debug("CHANNEL " + channels[currentChannelIndex + 1] + " ALREADY EXISTS")
             }else{
                 log.debug("CHANNEL " + channels[currentChannelIndex + 1] + " DOES NOT EXISTS")

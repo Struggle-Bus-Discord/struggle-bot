@@ -46,23 +46,21 @@ log.info(games)
 
 export default {
 
-    userLeftChannel : (member) => {
-        if(member.channel.parent.name.includes("Game Voice Channels")){
-            if(member.channel.members.size == 0){
-                log.debug(`  - Nobody is left in ${member.channel.name}`)
+    userLeftChannel : (channel) => {
+        if(channel.parent.name.includes("Game Voice Channels")){
+            if(channel.members.size == 0){
+                log.debug(`  - Nobody is left in ${channel.name}`)
 
-                let game = _.find(games, ['voiceChannel', member.channel.name])
+                let game = _.find(games, ['voiceChannel', channel.name])
                 if(game){
-                    log.info(`    - Removing public permissions from ${member.channel.name}`)
-                    member.channel.updateOverwrite(member.channel.guild.roles.everyone, { VIEW_CHANNEL: false })
+                    log.info(`    - Removing public permissions from ${channel.name}`)
+                    channel.updateOverwrite(channel.guild.roles.everyone, { VIEW_CHANNEL: false })
                 }
             }
         }
     },
 
-    userEnteredChannel : (member) => {
-        let channel = member.channel
-
+    userEnteredChannel : (channel) => {
         if(channel.parent.name.includes("Game Voice Channels")){
             let game = _.find(games, ['voiceChannel', channel.name])
             if(game){
