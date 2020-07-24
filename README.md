@@ -5,7 +5,9 @@ Discord bot used for the struggle bus server
 
 ## Local Development
 Suggested Tools:
-- Visual Studio Cod
+- Visual Studio Code
+- Newest version of Node and npm
+- Git cli
 
 ### Setup
 1. Clone the repository to a folder of your choice.
