@@ -45,7 +45,7 @@ _.forEach(games, (game) => {
 
 export default {
 
-   iniatalize : async (guild) => {
+    iniatalize : async (guild) => {
         let gameVoiceCategory = guild.channels.cache.find(channel => channel.name.includes('🔉 Game Voice Channels'))
         let gameVoiceChannels = gameVoiceCategory.children
 
