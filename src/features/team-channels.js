@@ -33,15 +33,15 @@ export default {
                     
                     let currentChannelName = channelNames[i]
                     let previousChannelName = channelNames[i-1]
-                    log.debug("Checking item " + i + " " + currentChannelName + " " + previousChannelName)
+                    //log.debug("Checking item " + i + " " + currentChannelName + " " + previousChannelName)
 
                     if(currentChannelName && previousChannelName){
 
                         let currentChannel = allChannels.find(channel => channel.name == currentChannelName)
                         let previousChannel = allChannels.find(channel => channel.name == previousChannelName)
 
-                        log.debug("current: " + currentChannel.name + ":" + currentChannel.members.size)
-                        log.debug("previous: " + previousChannel.name + ":" + previousChannel.members.size)
+                        //log.debug("current: " + currentChannel.name + ":" + currentChannel.members.size)
+                        //log.debug("previous: " + previousChannel.name + ":" + previousChannel.members.size)
 
                         if(currentChannel.members.size == 0 && previousChannel.members.size == 0){
                             log.info("Deleting channel " + currentChannel.name)
