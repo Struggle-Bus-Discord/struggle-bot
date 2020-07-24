@@ -49,7 +49,7 @@ export default {
         let gameVoiceCategory = guild.channels.cache.find(channel => channel.name.includes('Game Voice Channels'))
         let gameVoiceChannels = gameVoiceCategory.children
 
-        let initialPosition = gameVoiceChannels.find(channel => channel.name == 'General').position
+        let initialPosition = gameVoiceChannels.find(channel => channel.name == 'General').position + 1
         log.debug(initialPosition)
 
         for (let i = 0; i < games.length; i++) {
