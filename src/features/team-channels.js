@@ -1,7 +1,7 @@
 import _ from 'lodash'
 import log from '../utils/logger.js'
 
-let channels = [
+let channelNames = [
     'Alpha Team',
     'Bravo Team',
     'Charlie Team',
@@ -20,43 +20,44 @@ let channels = [
     'Papa Team'
 ]
 
-let deletedChannels = []
-
 export default {
 
     userLeftChannel : (channel) => {
 
-        if(channels.includes(channel.name)){
+        if(channelNames.includes(channel.name)){
 
             if(channel.members.size == 0){
-                log.debug(`  - Nobody is left in ${channel.name}`)
-                if(channel.name != channels[0]){
-                    log.info("Deleting channel " + channel.name)
-                    channel.delete();
+                
+                let allChannels = channel.guild.channels.cache
+                for (var i = allChannels.length - 1; i >= 0; i--) {
+                    let currentChannel = allChannels[i]
+                    let previousChannel = allChannels[i-1]
+
+                    if(previousChannel){
+                        if(currentChannel.members.size == 0 && previousChannel.members.size == 0){
+                            log.info("Deleting channel " + channel.name)
+                            currentChannel.delete()
+                        }
+                    }
                 }
-
-                // Loop through and delete all empty but the last
-
             }
         }
     },
 
     userEnteredChannel : (channel) => {
 
-        if(channels.includes(channel.name)){
+        if(channelNames.includes(channel.name)){
 
-            // Check if the next name exists
-            let currentChannelIndex = channels.indexOf(channel.name)
-            
-            log.debug(channel.name + " INDEX: " + currentChannelIndex)
-            let nextChannelName = channels[currentChannelIndex + 1]
-            if (channel.guild.channels.cache.find(channel => channel.name == nextChannelName)) { 
-                log.debug("CHANNEL " + nextChannelName + " ALREADY EXISTS")
-            }else{
-                log.debug("CHANNEL " + nextChannelName + " DOES NOT EXISTS")
-                channel.clone({
-                    name: nextChannelName
-                })
+            let nextChannelName = channelNames[channelNames.indexOf(channel.name) + 1]
+            if(nextChannelName){
+
+                let nextChannel = channel.guild.channels.cache.find(channel => channel.name == nextChannelName)
+                if (!nextChannel){
+                    log.debug("Creating new voice channel: " + nextChannelName)
+                    channel.clone({
+                        name: nextChannelName
+                    })
+                }
             }
         }
     }
