@@ -72,12 +72,12 @@ export default {
 
             if(!voiceChannel){
                 log.debug("Creating game channel: " + game.name + ' tied to role ' + gameRole.name)
-                guild.channels.create(game.name, _.merge({
+                await guild.channels.create(game.name, _.merge({
                     type: 'voice',
                     parent: gameVoiceCategory,
                 }, commonProperties))
             }else{
-                voiceChannel.edit(commonProperties)
+                await voiceChannel.edit(commonProperties)
             }
         });
     },
