@@ -41,8 +41,9 @@ _.forEach(games, (game) => {
         game.role = game.name
     }
 })
-log.info("Game configs found:")
-log.info(games)
+
+//log.info("Game configs found:")
+//log.info(games)
 
 export default {
 
