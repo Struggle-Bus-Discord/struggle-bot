@@ -17,7 +17,17 @@ let channelNames = [
     'Mike Squad',
     'November Squad',
     'Oscar Squad',
-    'Papa Squad'
+    'Papa Squad',
+    'Quebec Squad',
+    'Romeo Squad',
+    'Sierra Squad',
+    'Tango Squad',
+    'Uniform Squad',
+    'Victor Squad',
+    'Whiskey Squad',
+    'Xray Squad',
+    'Yankee Squad',
+    'Zulu Squad'
 ]
 
 export default {
