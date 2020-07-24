@@ -28,16 +28,18 @@ export default {
 
             if(channel.members.size == 0){
                 
-                let allChannels = channel.parent.children.array()
-                log.debug(allChannels.length)
-                for (var i = allChannels.length - 1; i >= 0; i--) {
+                let allChannels = channel.parent.children
+                for (var i = channelNames.length - 1; i >= 0; i--) {
                     
-                    let currentChannel = allChannels[i]
-                    log.debug(currentChannel)
-                    let previousChannel = allChannels[i-1]
-                    log.debug("Checking item " + i + " " + currentChannel + " " + previousChannel)
+                    let currentChannelName = channelNames[i]
+                    let previousChannelName = channelNames[i-1]
+                    log.debug("Checking item " + i + " " + currentChannelName + " " + previousChannelName)
 
-                    if(currentChannel && previousChannel){
+                    if(currentChannelName && previousChannelName){
+
+                        let currentChannel = allChannels.find(channel => channel.name == currentChannelName)
+                        let previousChannel = allChannels.find(channel => channel.name == previousChannelName)
+
                         log.debug("current: " + currentChannel.name + ":" + currentChannel.members.size)
                         log.debug("previous: " + previousChannel.name + ":" + previousChannel.members.size)
 
