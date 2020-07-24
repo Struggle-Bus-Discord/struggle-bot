@@ -21,19 +21,8 @@ One word of caution when running locally is you may want to stop the one on the 
 ## Server Setup Instructions
 1. Install NodeJS and NPM
 2. Globally install pm2
-3. run `pm2 ecosystem && mv ecosystem.config.js ecosystem.config.cjs`
-4. Edit the ecosystem config to the following:
-   ```
-   module.exports = {
-     apps : [{
-       script: 'src/bot.js',
-       watch: 'src/',
-       env: {
-         "BOT_TOKEN": "<REDACTED>",
-       }
-     }]
-   };
-   ```
+3. run `mv ecosystem.config.example.js ecosystem.config.cjs`
+4. Edit the ecosystem config to include the proper token
 5. run `pm2 startOrReload ecossystem.config.cjs`
 
 TO monitor the bot run `pm2 monit`
