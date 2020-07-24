@@ -14,9 +14,9 @@ client.on('ready', () => {
 
     log.info("Connected as " + client.user.tag)
     client.user.setActivity("with My Balls")
-    log.info("I am connected to the following guilds:")
+    log.debug("I am connected to the following guilds:")
     client.guilds.cache.forEach((guild) => {
-        log.info(`  - ${guild.name}`)
+        log.debug(`  - ${guild.name}`)
     });
 })
 
@@ -55,7 +55,7 @@ client.on("voiceStateUpdate", function(oldMember, newMember){
     if(newMember && newMember.channel){
         log.debug(`${newMember.member.displayName} Joined ${newMember.channel.name}`)        
         GameChannels.userEnteredChannel(newMember.channel)
-        TeamChannels.userEnteredChannel(newMember.channel, newMember.guild)
+        TeamChannels.userEnteredChannel(newMember.channel)
     }
 
 });
