@@ -49,7 +49,7 @@ export default {
         let gameVoiceCategory = guild.channels.cache.find(channel => channel.name.includes('🔉 Game Voice Channels'))
         let gameVoiceChannels = gameVoiceCategory.children
 
-        games.forEach(game => {
+        games.forEach(async game => {
 
             let voiceChannel = gameVoiceChannels.find(channel => channel.name == game.name)
             let gameRole = guild.roles.cache.find(role => role.name == game.role)
