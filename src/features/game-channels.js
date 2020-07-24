@@ -56,7 +56,7 @@ export default {
             let voiceChannel = gameVoiceChannels.find(channel => channel.name == game.name)
             let gameRole = guild.roles.cache.find(role => role.name == game.role)
             if(!voiceChannel && game.name == 'Minecraft'){
-                log.debug("Creating game channel: " + game.name + ' with role permissions ' + role.name)
+                log.debug("Creating game channel: " + game.name + ' with role permissions ' + gameRole.name)
                 guild.channels.create(game.name, {
                     type: 'voice',
                     parent: gameVoiceCategory,
@@ -66,7 +66,7 @@ export default {
                             deny: ['VIEW_CHANNEL']
                         },
                         {
-                            id: role,
+                            id: gameRole,
                             allow: ['VIEW_CHANNEL']
                         }
                     ]
