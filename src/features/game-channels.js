@@ -58,6 +58,7 @@ export default {
             if(!voiceChannel && game.name == 'Minecraft'){
                 log.debug("Creating game channel: " + game.name + ' with role permissions ' + role.name)
                 guild.channels.create(game.name, {
+                    type: 'voice',
                     parent: gameVoiceCategory,
                     permissionOverwrites: [
                         {
