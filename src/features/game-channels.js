@@ -49,7 +49,7 @@ export default {
 
     iniatalize : (client) => {
         // TODO MAKE SURE WE ARE STUGGLE BUS
-        let server = client.guilds.cache[0]
+        let server = client.guilds.cache.first
         log.debug(server.channels.cache.find(channel => channel.name = 'Game Voice Channels'))
 
     },
