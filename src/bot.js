@@ -19,7 +19,7 @@ client.on('ready', () => {
         log.debug(`  - ${guild.name}`)
     });
 
-    GameChannels.iniatalize(client)
+    GameChannels.iniatalize(client.guilds.cache.first)
 })
 
 client.on('message', message => {

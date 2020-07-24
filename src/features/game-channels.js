@@ -47,10 +47,9 @@ _.forEach(games, (game) => {
 
 export default {
 
-    iniatalize : (client) => {
+    iniatalize : (guild) => {
         // TODO MAKE SURE WE ARE STUGGLE BUS
-        let server = client.guilds.cache.first
-        log.debug(server.channels.cache.find(channel => channel.name = 'Game Voice Channels'))
+        log.debug(guild.channels.cache.find(channel => channel.name = 'Game Voice Channels'))
 
     },
 
