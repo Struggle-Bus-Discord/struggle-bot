@@ -34,31 +34,32 @@ export default {
                 parent: gameVoiceCategory,
             })
         }else{
-            log.debug(gameVoiceCategory.children.size)
             await voiceChannel.edit({
                 bitrate: 128000,
-                position: gameVoiceCategory.children.size - 1
+                position: gameVoiceCategory.children.size - 1 // places it at the end
             })
         }
     },
 
     userLeftChannel : (channel) => {
 
+        // If they left a team channel
         if(channelNames.includes(channel.name)){
 
+            // And no one is left
             if(channel.members.size == 0){
                 
-                let allChannels = channel.parent.children
+                // In reverse direction
                 for (var i = channelNames.length - 1; i >= 0; i--) {
                     
                     let currentChannelName = channelNames[i]
                     let previousChannelName = channelNames[i-1]
-                    //log.debug("Checking item " + i + " " + currentChannelName + " " + previousChannelName)
+                    log.debug("Checking item " + i + " " + currentChannelName + " " + previousChannelName)
 
                     if(currentChannelName && previousChannelName){
 
-                        let currentChannel = allChannels.find(channel => channel.name == currentChannelName)
-                        let previousChannel = allChannels.find(channel => channel.name == previousChannelName)
+                        let currentChannel = channel.parent.children.find(channel => channel.name == currentChannelName)
+                        let previousChannel = channel.parent.children.find(channel => channel.name == previousChannelName)
 
                         //log.debug("current: " + currentChannel.name + ":" + currentChannel.members.size)
                         //log.debug("previous: " + previousChannel.name + ":" + previousChannel.members.size)
@@ -67,7 +68,7 @@ export default {
                             log.info("Deleting channel " + currentChannel.name)
                             //currentChannel.delete()
                         }else{
-                            //break;
+                            break;
                         }
                     }
                 }
