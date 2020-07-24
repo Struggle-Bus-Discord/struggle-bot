@@ -1,6 +1,7 @@
 import _ from 'lodash'
 import log from '../utils/logger.js'
 
+const positionStart = 2
 const games = [
     {
         name: 'Call of Duty Modern Warfare',
@@ -57,7 +58,7 @@ export default {
             let gameRole = guild.roles.cache.find(role => role.name == game.role)
             if(!voiceChannel && game.name == 'Minecraft'){
                 log.debug("Creating game channel: " + game.name + ' with role permissions ' + gameRole.name)
-                guild.channels.create(game.name, {
+                voiceChannel = guild.channels.create(game.name, {
                     type: 'voice',
                     bitrate: 128000,
                     parent: gameVoiceCategory,
@@ -73,7 +74,8 @@ export default {
                     ]
                 })
             }
-            
+
+            log.debug(voiceChannel);
         });
     },
 
