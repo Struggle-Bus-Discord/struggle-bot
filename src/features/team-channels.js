@@ -30,7 +30,7 @@ export default {
                 
                 let allChannels = channel.parent.children.array()
                 log.debug(allChannels.length)
-                for (var i = allChannels.size - 1; i >= 0; i--) {
+                for (var i = allChannels.length - 1; i >= 0; i--) {
                     
                     let currentChannel = allChannels[i]
                     log.debug(currentChannel)
