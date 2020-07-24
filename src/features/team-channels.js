@@ -20,6 +20,8 @@ let channels = [
     'Papa Team'
 ]
 
+let deletedChannels = []
+
 export default {
 
     userLeftChannel : (channel) => {
@@ -32,11 +34,14 @@ export default {
                     log.info("Deleting channel " + channel.name)
                     channel.delete();
                 }
+
+                // Loop through and delete all empty but the last
+
             }
         }
     },
 
-    userEnteredChannel : (channel, guild) => {
+    userEnteredChannel : (channel) => {
 
         if(channels.includes(channel.name)){
 
@@ -45,7 +50,7 @@ export default {
             
             log.debug(channel.name + " INDEX: " + currentChannelIndex)
             let nextChannelName = channels[currentChannelIndex + 1]
-            if (guild.channels.cache.find(channel => channel.name == nextChannelName)) { 
+            if (channel.guild.channels.cache.find(channel => channel.name == nextChannelName)) { 
                 log.debug("CHANNEL " + nextChannelName + " ALREADY EXISTS")
             }else{
                 log.debug("CHANNEL " + nextChannelName + " DOES NOT EXISTS")
