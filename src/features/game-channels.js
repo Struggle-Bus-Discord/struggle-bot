@@ -52,6 +52,8 @@ export default {
 
         games.forEach(game => {
 
+            log.debug(gameVoiceChannels)
+
             let voiceChannel = gameVoiceChannels.find(channel => channel.name == game.name)
             if(!voiceChannel){
                 log.debug("Creating game channel: " + game)
