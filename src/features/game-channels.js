@@ -30,6 +30,9 @@ const games = [
     },
     {
         name: 'Stardew Valley'
+    },
+    {
+        name: 'Fall Guys'
     }
 ]
 
