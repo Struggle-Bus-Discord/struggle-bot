@@ -4,15 +4,15 @@ import log from '../utils/logger.js'
 const positionStart = 1
 const games = [
     {
+        name: 'Fall Guys'
+    },
+    {
         name: 'Call of Duty Modern Warfare',
         role: 'Call of Duty MW'
     },
     {
         name: 'Dauntless'
-    },
-    {
-        name: 'Fall Guys'
-    },
+    },    
     {
         name: 'Destiny 2'
     },
