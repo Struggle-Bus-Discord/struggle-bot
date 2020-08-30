@@ -11,6 +11,9 @@ const games = [
         name: 'Dauntless'
     },
     {
+        name: 'Fall Guys'
+    },
+    {
         name: 'Destiny 2'
     },
     {
@@ -30,9 +33,6 @@ const games = [
     },
     {
         name: 'Stardew Valley'
-    },
-    {
-        name: 'Fall Guys'
     }
 ]
 
