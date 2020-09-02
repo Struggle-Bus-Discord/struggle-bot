@@ -31,6 +31,8 @@ client.on('message', message => {
     if (message.content === '!ping') {
         // send back "Pong." to the channel the message was sent in
         message.channel.send('Pong.');
+        log.info("Ponged - Info Log")
+        log.debug("Ponged - Debug Log")
     }
 
     if (message.content == '!clear' && message.channel.name == 'bot-logs'){
