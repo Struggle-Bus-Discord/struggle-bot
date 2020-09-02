@@ -72,15 +72,15 @@ export default {
                 ]
             }
 
-            if(!voiceChannel){
-                log.debug("Creating game channel: " + game.name + ' tied to role ' + gameRole.name)
-                await guild.channels.create(game.name, _.merge({
-                    type: 'voice',
-                    parent: gameVoiceCategory,
-                }, commonProperties))
-            }else{
-                await voiceChannel.edit(commonProperties)
-            }
+            // if(!voiceChannel){
+            //     log.debug("Creating game channel: " + game.name + ' tied to role ' + gameRole.name)
+            //     await guild.channels.create(game.name, _.merge({
+            //         type: 'voice',
+            //         parent: gameVoiceCategory,
+            //     }, commonProperties))
+            // }else{
+            //     await voiceChannel.edit(commonProperties)
+            // }
         };
     },
 
