@@ -4,8 +4,9 @@ Discord bot used for the struggle bus server
 **NOTE:** Any pushes to this repo will automatically trigger the Jenkins build and restart the server.
 
 ## Production
-Logs: https://my.papertrailapp.com/groups/4423992/events
-Jenkins: Ask Greg, never share
+**Logs:** https://my.papertrailapp.com/groups/4423992/events
+**Jenkins:** Ask Greg, never share
+**Uptime:** https://uptimerobot.com/
 
 ## Local Development/On-boarding
 Required Access
