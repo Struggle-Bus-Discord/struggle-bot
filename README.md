@@ -3,7 +3,16 @@ Discord bot used for the struggle bus server
 
 **NOTE:** Any pushes to this repo will automatically trigger the Jenkins build and restart the server.
 
-## Local Development
+## Production
+Logs: https://my.papertrailapp.com/groups/4423992/events
+Jenkins: Ask Greg, never share
+
+## Local Development/On-boarding
+Required Access
+- Add to the Struggle-Bus-Discord organization
+- Logs: Papertrail struggle-bot group
+- CI Server: restart after added to Struggle Bus Org
+
 Suggested Tools:
 - Visual Studio Code
 - Newest version of Node and npm
