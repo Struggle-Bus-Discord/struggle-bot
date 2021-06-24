@@ -5,5 +5,6 @@ node(){
   
   stage('Build'){
     sh "npm install"
+    sh "pm2 start src/bot.js"
   }
 }
