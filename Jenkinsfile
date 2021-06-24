@@ -1,4 +1,9 @@
 node(){
-  checkout scm
-  sh "ls -la"
+  stage('Prepare'){
+    checkout scm
+  }
+  
+  stage('Build'){
+    sh "npm install"
+  }
 }
