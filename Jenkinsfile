@@ -7,6 +7,6 @@ node(){
   stage('Build'){
     sh "npm install"
     sh "ls -la"
-    sh "pm2 startOrReload ecosystem.config.cjs"
+    sh "pm2 startOrReload ecosystem.config.cjs  --env production"
   }
 }
