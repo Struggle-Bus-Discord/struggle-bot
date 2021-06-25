@@ -1,6 +1,8 @@
 node(){
   stage('Prepare'){
+    sh "ls -la"
     checkout scm
+    sh "ls -la"
   }
   
   stage('Build'){
