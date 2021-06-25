@@ -6,6 +6,6 @@ node(){
   stage('Build'){
     sh "npm install"
     sh "npm start"
-    sh "pm2 start src/bot.js"
+    sh "pm2 startOrReload ecossystem.config.cjs"
   }
 }
