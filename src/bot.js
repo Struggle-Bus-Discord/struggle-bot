@@ -1,9 +1,11 @@
-import 'dotenv/config.js';
+import dotenv from 'dotenv'
 import _ from 'lodash'
 import * as Discord from 'discord.js'
 import { Logger } from './utils/logger.js'
 import GameChannels from './features/game-channels.js'
 import TeamChannels from './features/team-channels.js'
+
+dotenv.config()
 
 let client = new Discord.Client()
 let log = new Logger({client:client})
