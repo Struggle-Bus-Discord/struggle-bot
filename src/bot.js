@@ -10,8 +10,8 @@ dotenv.config()
 // Todo loop and try again and again
 let client = new Discord.Client()
 
-int count = 0;
-int maxTries = 3;
+let count = 0;
+let maxTries = 3;
 while(true) {
     try {
         client = new Discord.Client()
