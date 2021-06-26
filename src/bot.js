@@ -7,20 +7,7 @@ import TeamChannels from './features/team-channels.js'
 
 dotenv.config()
 
-// Todo loop and try again and again
 let client = new Discord.Client()
-
-let count = 0;
-let maxTries = 3;
-while(true) {
-    try {
-        client = new Discord.Client()
-        break
-    } catch (e) {
-        await new Promise(r => setTimeout(r, 2000));
-        if (++count == maxTries) throw e;
-    }
-}
 
 let log = new Logger({client:client})
 
