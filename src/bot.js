@@ -15,6 +15,7 @@ let maxTries = 3;
 while(true) {
     try {
         client = new Discord.Client()
+        break
     } catch (e) {
         await new Promise(r => setTimeout(r, 2000));
         if (++count == maxTries) throw e;
