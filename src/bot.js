@@ -8,7 +8,7 @@ import TeamChannels from './features/team-channels.js'
 dotenv.config()
 
 // Todo loop and try again and again
-let client = null
+let client = new Discord.Client()
 
 int count = 0;
 int maxTries = 3;
